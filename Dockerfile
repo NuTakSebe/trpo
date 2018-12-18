@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 MAINTAINER Egor Kashirin "mailgorinich@gmail.com"
 RUN apt-get update -y && apt-get install -y python3-pip python3-dev build-essential locales
-RUN pip3 install flask
+RUN pip3 install flask sklearn
 # Copy working directory
 COPY . /app
 WORKDIR /app
