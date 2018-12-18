@@ -1,4 +1,4 @@
-from flask import Flask, abort, request 
+from flask import Flask, abort, request
 import json
 
 from algorithm import predict
@@ -15,9 +15,9 @@ def analyze_request():
 		abort(400)
 	print(request.json)
 	data_result = predict(request.json['id'])
-	return str(data_result) 
+	return str(data_result)
 
-@app.rout('/foo', methods=['GET', 'POST'])
+@app.route('/foo', methods=['GET', 'POST'])
 def foo():
 	return 'Reached'
 
