@@ -14,7 +14,7 @@ def analyze_request():
 	if not request.json:
 		abort(400)
 	print(request.json)
-	data_result = predict(request.json['id'][0], request.json['id'][1])
+	data_result = predict(request.json['id'])
 	return str(data_result) 
 
 @app.rout('/foo', methods=['GET', 'POST'])
