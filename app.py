@@ -7,14 +7,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Flask Dockerized'
+    return 'Auto Flask Dockerized'
 
 @app.route('/analyze', methods=['POST'])
 def analyze_request():
 	if not request.json:
 		abort(400)
 	print(request.json)
-	data_result = predict(request.json['id'])
+	data_result = predict(request.json['id'][0], request.json['id'][1])
 	return str(data_result) 
 
 @app.rout('/foo', methods=['GET', 'POST'])
